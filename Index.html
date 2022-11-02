@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>제논의 역설</title>
+	<style type="text/css">
+		@font-face {
+		    font-family: 'Pretendard-Regular';
+		    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+		    font-weight: 400;
+		    font-style: normal;
+}
+
+		body, div {margin: 0; padding: 0;}
+
+		#hidden{width: 100vw; height: 950px; position: absolute; margin: 0; padding: 0; top: 0; left: 0; z-index: 10000; overflow: hidden; display: none;}
+		#bg{width: 100vw; height: 950px; background-image: url(paper.jpg); background-size: cover; }
+		
+		
+
+		#bgHide{width: 100vw; height: 950px; background-image: url(paper.jpg); background-size: cover; position: absolute; top: 0; left: 0; z-index: 1;}
+
+		@keyframes www{
+			0%{opacity: 100%;}
+			50%{opacity: 0%;}
+			100%{opacity: 0%;}
+		}
+
+		header{width: 1400px; margin: auto; position: absolute; top: 0; left: 0; z-index: 3;}
+		.title{font-size: 200px; line-height: 0.9; font-family: 'Poppins', sans-serif; font-weight: 500; margin: 0; z-index: 10;margin-left: 50px; position: absolute;}
+		.a1{margin-top: 30px; opacity: 0; left: 0;}
+		.a2{opacity: 0; left: 0; top: 200px;}
+
+		#large{width: 100vw; height: 300px; position: absolute; top: 0; left: 0; margin: 0; padding: 0;}
+
+		@keyframes a1{from{opacity: 0; left: 100vw;} to{opacity: 1;left: 0}}
+		@keyframes a3{from{top: 0;} to{top: 500px;}}
+
+		
+		#b1{width: 520px; font-size: 18px; line-height: 1.6; word-break: keep-all; padding-left: 10px; position: absolute; top: 50px; z-index: 5; font-family: 'Pretendard-Regular'; font-size: 400;}
+
+
+		
+		@keyframes b1{
+			0%{opacity: 0; left: 120%;}
+			60%{left: 50%;}
+			100%{opacity: 1; left: 80%;}
+		}
+
+
+
+		#container{display: flex; flex-wrap: wrap; transform: translate(-50%,-50%) rotate(20deg); position: absolute; height: 100px; width: 100%; }
+		#tortoise{width: 200px; height: 200px; background-image: url(turtle.png); background-size: cover; position: relative; top: 130px; left: 0px; display: none; transform: translate(-50%,-50%) ; z-index: 99;}
+		#tortoise:hover{width: 250px; height: 250px;}
+		#man{width: 200px; height: 200px; background-image: url(man.png); background-size: cover; position: relative; top: 130px; left: 0px; display: none; transform: translate(-50%,-50%); z-index: 99;}
+
+		@keyframes shift{
+				0%{left: 100px; opacity: 0;}
+				5%{opacity: 1;}
+				90%{opacity: 1;}
+				100%{left: 2800px; opacity: 0;}
+			}
+		@keyframes shift2{
+				0%{left: -100px; opacity: 0;}
+				5%{opacity: 1;}
+				90%{opacity: 1;}
+				100%{left: 2800px; opacity: 0;}
+			}
+
+		#sub{font-size: 36pt; font-weight: 700; margin-bottom: 50px;}
+
+		#second{position: absolute; z-index: 2; top: 50vh; left: 50vw; transform: translate(-50%,-50%); width: 1200px; height: 600px; display: none; flex-wrap: wrap; font-family: 'Pretendard-Regular';}
+		#text1{width: 1200px; height: 150px; margin: auto; font-size: 18px; line-height: 1.6; word-break: keep-all;}
+		#stt{width: 50px; height: 50px; border-radius: 50%; background: palegreen; border-style: none; left: 1150px; top: 10px; position: absolute;}
+		#stt:hover{background: red; color: white;}
+
+
+		#race{width: 1200px; height: 400px; background-color: white; position: relative; top: 0px; display: flex; flex-wrap: wrap; overflow: hidden;}
+        #turtle, #rabbit{width: 50px; height: 50px; border-radius: 50%;
+                                transform: translate(-50%, -50%);position: relative;
+                                top: 200px; left: 0px}
+        #turtle{background-image: url(man2.png); background-size: cover;}
+         #rabbit{background-image: url(turtle2.png); background-size: cover;}
+         #distMonitor{font-family: 'Pretendard-Regular'; font-size: 20px; color: blue;} 
+
+</style>
+</head>
+<body>
+	<div id="hidden">
+		<div id="container">
+			<div id="man"></div>
+			<div id="tortoise"></div>
+		</div>
+	</div>
+	<div id="bg"></div>
+	<div id="bgHide"></div>
+	<header>
+		<section id="mainText">
+			<div id="large">
+				<div class="title a1" id="a1">Zeno's</div>
+				<div class="title a2" id="a2">Paradoxes</div>
+			</div>
+			<div id="b1"></div>
+		</section>
+		<audio src="greek.m4a" id="bgm"></audio>
+		<div id="second">
+			<div id="sub">아킬레우스와 거북이</div>
+			<button id="stt">voice off</button>
+			<div id="text1">
+			아킬레우스와 거북이는 제논의 역설 중 가장 유명한 이야기로, 아킬레우스가 먼저 출발한 거북이를 절대 따라잡을 수 없다는 내용이다. 아킬레우스가 거북이보다 10배 빨리 이동할 수 있다고 가정하고, 아킬레우스보다 거북이를 100m 앞에서 출발 시켜보자. 아킬레우스가 100m를 달려가면 거북이는 10m를 가고, 거북이를 따라잡기 위해 아킬레우스가 10m를 가면 그동안 거북이는 다시 1m를 나아간다. 아킬레우스가 거북이를 따라잡기 위해 달리는 동안 거북이 역시 움직이므로 아킬레우스는 영원히 거북이를 따라잡을 수 없다.
+			</div>
+			<div id="race">
+                <div id="rabbit"></div>
+                <div id="turtle"></div>
+                <div id="distMonitor"></div>
+        	</div>
+
+        	<div id="monitor"></div>
+		</div>
+		
+	</header>
+
+	<script type="text/javascript">
+		document.body.onload = function(){
+			a1.style.animation = "a1 0.5s forwards cubic-bezier(0,.63,.12,1) 1s";
+			a2.style.animation = "a1 0.5s forwards cubic-bezier(0,.63,.12,1) 1.1s";
+		}
+		
+		a2.onanimationend = function(){
+			b1.style.animation = "b1 2s forwards cubic-bezier(.63,.19,.56,.93)";
+			var contents = "제논의 역설은 고대 그리스 엘레아의 제논이, '만물은 흐른다.'라는 이론을 반대하기 위해서 만들어낸 여러 가지의 역설을 지칭한다. 그는 '우리가 느끼는 것은 모두 환상'이라는 파르메니데스의 사상을 지지하였으며 그가 제기한 이론이 역설임을 밝혀내기 위해 실제로 이천여 년이 걸렸다.";
+			var contentsArr = contents.split(" ");
+			var s = 0;
+			var contentsTimer = setInterval(print,100);
+
+			function print(){
+				var t = document.createElement("span");
+				t.innerHTML = contentsArr[s] + " ";
+				t.className = "word";
+				s++;
+				b1.appendChild(t);
+				if(s == contentsArr.length){
+					clearInterval(contentsTimer);
+				}
+			}
+		}
+
+		b1.onanimationend = function(){
+			large.style.animation = "a3 0.5s forwards cubic-bezier(.12,.68,.19,.91)";
+		}
+
+		
+		large.onanimationend = function(){
+				hidden.style.display = "block";
+				tortoise.style.animation = "shift 25s infinite linear";
+				tortoise.style.display = "flex";
+				man.style.animation = "shift2 25s infinite linear";		
+				man.style.display = "flex";
+		}
+		
+		tortoise.onclick = function(){
+			bgm.play();
+			mainText.style.display = "none";
+			hidden.style.display = "none";
+			bgHide.style.animation = "www 4s forwards";	
+			second.style.display = "flex";
+		}
+
+		bgHide.onanimationend = function(){
+			speak(text1.innerHTML, 10, 1);
+		}
+	
+		    
+		stt.onclick = ()=>{
+		    window.speechSynthesis.cancel();
+		    console.log("끝");
+		    //speak("끝", 1, 1);
+		}
+
+		function speak(text, spd, pitch) {
+		    window.speechSynthesis.cancel();
+
+		    let speech = new SpeechSynthesisUtterance();
+		    speech.rate = spd; //0.1~10
+		    speech.pitch = pitch; // 0~2
+		    speech.lang = "ko-KR";
+		    speech.text = text;
+		    
+		    window.speechSynthesis.speak(speech);
+		}
+
+		//경주
+		let distance = 500;
+                let forward = 80;
+                let turtleRatio = 0.5;
+                let rabbitDistance = distance;
+                let turtleDistance = 0;
+
+                rabbit.style.left = rabbitDistance + "px";
+                window.onkeydown = function(e){
+                        if(e.keyCode == 39){
+	                                console.log("enter!!");
+	                        rabbitDistance += forward; 
+	                        rabbit.style.left = rabbitDistance + "px";
+	                        turtleDistance += (rabbitDistance - turtleDistance) * turtleRatio;
+	                        turtle.style.left = turtleDistance + "px";
+
+	                        if (rabbitDistance == 1300){
+	                        	alert("경주에서 졌습니다.");
+	                        }
+	                }
+                }
+
+	
+	</script>
+
+</body>
+</html>
